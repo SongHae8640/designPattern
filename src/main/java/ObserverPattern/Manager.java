@@ -2,9 +2,12 @@ package ObserverPattern;
 
 public class Manager implements Observer{
     private String name;
+    private Singer singer;
 
-    public Manager(String name) {
+    public Manager(String name, Singer singer) {
         this.name = name;
+        this.singer = singer;
+        this.singer.register(this);
     }
 
     @Override
@@ -13,9 +16,9 @@ public class Manager implements Observer{
     }
 
     @Override
-    public void update(String album) {
-        System.out.printf("Manager(%s).update :: album :%s\n",this.name, album);
-        this.monitorReaction(album);
+    public void update() {
+        System.out.printf("Manager(%s).update\n",this.name);
+        this.monitorReaction(this.singer.getAlbums().get(0));
     }
 
     private void monitorReaction(String album) {

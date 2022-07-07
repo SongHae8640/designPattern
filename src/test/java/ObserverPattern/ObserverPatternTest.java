@@ -8,17 +8,10 @@ public class ObserverPatternTest {
     public void observerTest(){
         Singer iu = new Singer("아이유");
 
-        Manager manager1 = new Manager("매니저1");
-        iu.register(manager1);
-
-        Reporter reporter1 = new Reporter("기자1");
-        iu.register(reporter1);
-
-        Fan fan1 = new Fan("팬1");
-        iu.register(fan1);
-
-        Fan fan2 = new Fan("팬2");
-        iu.register(fan2);
+        Manager manager1 = new Manager("매니저1",iu);
+        Reporter reporter1 = new Reporter("기자1",iu);
+        Fan fan1 = new Fan("팬1",iu);
+        Fan fan2 = new Fan("팬2",iu);
 
         iu.releaseAlbum("라일락");
 

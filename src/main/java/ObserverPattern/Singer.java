@@ -25,17 +25,20 @@ public class Singer implements Subject {
     }
 
     @Override
-    public void notifyObserver(String album) {
+    public void notifyObserver() {
         for (Observer observer: observers) {
-            observer.update(album);
+            observer.update();
         }
     }
 
     public void releaseAlbum(String album){
         this.albums.add(album);
         System.out.printf("Singer(%s).releaseAlbum :: album=%s\n",this.name,album);
-        this.notifyObserver(album);
+        this.notifyObserver();
 
     }
 
+    public List<String> getAlbums() {
+        return albums;
+    }
 }

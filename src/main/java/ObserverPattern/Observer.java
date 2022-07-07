@@ -1,6 +1,6 @@
 package ObserverPattern;
 
 public interface Observer {
-    void update(String album);
+    void update();
     String getName();
 }
