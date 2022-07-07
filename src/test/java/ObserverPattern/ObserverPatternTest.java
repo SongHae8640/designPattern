@@ -6,35 +6,30 @@ public class ObserverPatternTest {
 
     @Test
     public void observerTest(){
-        Influencer iu = new Influencer("아이유");
+        Singer iu = new Singer("아이유");
 
-        Subscriber iuManager = new Subscriber("아이유 매니저");
-        iuManager.subscribe(iu);
-        Subscriber iuCeo = new Subscriber("아이유 소속사 사장");
-        iuCeo.subscribe(iu);
+        Manager manager1 = new Manager("매니저1");
+        iu.register(manager1);
 
-        Subscriber people1 = new Subscriber("사람1");
-        people1.subscribe(iu);
-        Subscriber people2 = new Subscriber("사람2");
-        people2.subscribe(iu);
-        iu.postMessage("브로커 개봉~ 많관부~");
+        Reporter reporter1 = new Reporter("기자1");
+        iu.register(reporter1);
 
+        Fan fan1 = new Fan("팬1");
+        iu.register(fan1);
+
+        Fan fan2 = new Fan("팬2");
+        iu.register(fan2);
+
+        iu.releaseAlbum("라일락");
+
+
+        //탈덕
+        System.out.println();
+        iu.unregister(fan1);
         System.out.println();
 
-        Influencer coldPlay = new Influencer("콜드플레이");
-        people1.subscribe(coldPlay);
-        people2.subscribe(coldPlay);
-        coldPlay.postMessage("Hi Korea 내한!!");
 
-        System.out.println();
-
-        people1.cancelSubscription(iu);
-        iu.postMessage("싱글 발매!");
-
-        System.out.println();
-
-        coldPlay.postMessage("한쿡 싸랑해요");
-
+        iu.releaseAlbum("스트로베리문");
 
 
     }

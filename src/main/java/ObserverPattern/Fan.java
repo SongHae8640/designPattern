@@ -13,7 +13,7 @@ public class Fan implements Observer{
     }
 
     @Override
-    public void update(String message) {
-        System.out.printf("Fan(%s).update :: message :%s\n",this.name, message);
+    public void update(String album) {
+        System.out.printf("Fan(%s).update :: message :%s\n",this.name, album);
     }
 }
