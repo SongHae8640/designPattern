@@ -1,4 +1,4 @@
-package ObserverPattern.noPattern;
+package observerPattern.noPattern;
 
 public class Fan {
     private String name;

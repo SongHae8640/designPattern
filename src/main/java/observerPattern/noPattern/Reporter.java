@@ -1,4 +1,4 @@
-package ObserverPattern.noPattern;
+package observerPattern.noPattern;
 
 public class Reporter {
     private String name;

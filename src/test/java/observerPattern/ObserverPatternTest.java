@@ -1,6 +1,6 @@
-package ObserverPattern;
+package observerPattern;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class ObserverPatternTest {
 

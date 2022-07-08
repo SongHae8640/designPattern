@@ -1,4 +1,4 @@
-package ObserverPattern.noPattern;
+package observerPattern.noPattern;
 
 public class Manager {
     private String name;
