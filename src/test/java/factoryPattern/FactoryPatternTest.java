@@ -6,7 +6,8 @@ public class FactoryPatternTest {
 
     @Test
     public void orderTest(){
-        Cafe gigaCoffee = new Cafe();
+        CoffeeFactory coffeeFactory = new CoffeeFactory();
+        Cafe gigaCoffee = new Cafe(coffeeFactory);
 
         gigaCoffee.order("아메리카노");
         gigaCoffee.order("라떼");
