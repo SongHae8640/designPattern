@@ -1,15 +1,9 @@
 package factoryPattern;
 
-public class Cafe {
-
-    CoffeeFactory coffeeFactory;
-
-    public Cafe(CoffeeFactory coffeeFactory){
-        this.coffeeFactory = coffeeFactory;
-    }
+public abstract class Cafe {
 
     Coffee order(String menu){
-        Coffee coffee = this.coffeeFactory.createCoffee(menu);
+        Coffee coffee = this.createCoffee(menu);
 
         coffee.grindBean();
         coffee.extract();
@@ -17,4 +11,6 @@ public class Cafe {
 
         return coffee;
     }
+
+    abstract Coffee createCoffee(String menu);
 }
