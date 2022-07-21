@@ -2,7 +2,7 @@ package factoryPattern;
 
 public abstract class Cafe {
 
-    Coffee order(String menu){
+    Coffee order(Menu menu){
         Coffee coffee = this.createCoffee(menu);
 
         coffee.grindBean();
@@ -12,5 +12,5 @@ public abstract class Cafe {
         return coffee;
     }
 
-    abstract Coffee createCoffee(String menu);
+    abstract Coffee createCoffee(Menu menu);
 }

@@ -2,12 +2,12 @@ package factoryPattern;
 
 public class ShotBaseCafe extends Cafe{
     @Override
-    Coffee createCoffee(String menu) {
-        if (menu.equals("라떼")){
+    Coffee createCoffee(Menu menu) {
+        if (Menu.LATTE == menu){
             return new ShotBasedLatte();
-        }else if(menu.equals("아포가토")){
+        }else if(Menu.AFFOGATO == menu){
             return new ShotBasedAffogato();
-        }else if(menu.equals("아메리카노")) {
+        }else if(Menu.AMERICANO == menu) {
             return new ShotBasedAmericano();
         }
         return null;

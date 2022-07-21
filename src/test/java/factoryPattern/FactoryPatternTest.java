@@ -8,11 +8,11 @@ public class FactoryPatternTest {
     public void orderTest(){
 
         Cafe starbucks = new ShotBaseCafe();
-        starbucks.order("아메리카노");
-        starbucks.order("아포가토");
+        starbucks.order(Menu.AMERICANO);
+        starbucks.order(Menu.AFFOGATO);
 
         Cafe starbucksR = new DripBaseCafe();
-        starbucksR.order("라떼");
+        starbucksR.order(Menu.LATTE);
 
     }
 }
