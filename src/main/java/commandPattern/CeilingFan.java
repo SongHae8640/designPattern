@@ -6,7 +6,7 @@ public class CeilingFan {
         System.out.println(this.getClass().getName() + " :: " + new Object(){}.getClass().getEnclosingMethod().getName());
     }
 
-    public void row(){
+    public void low(){
         System.out.println(this.getClass().getName() + " :: " + new Object(){}.getClass().getEnclosingMethod().getName());
     }
 

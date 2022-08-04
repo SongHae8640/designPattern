@@ -2,11 +2,11 @@ package commandPattern;
 
 public class Tv {
 
-    public void on(){
+    public void onPower(){
         System.out.println(this.getClass().getName() + " :: " + new Object(){}.getClass().getEnclosingMethod().getName());
     }
 
-    public void off(){
+    public void offPower(){
         System.out.println(this.getClass().getName() + " :: " + new Object(){}.getClass().getEnclosingMethod().getName());
     }
 }
