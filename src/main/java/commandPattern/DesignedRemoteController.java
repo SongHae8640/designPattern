@@ -8,8 +8,14 @@ public class DesignedRemoteController {
     Command[] offCommands;
 
     public DesignedRemoteController(){
-        onCommands = new Command[5];
-        offCommands = new Command[5];
+        onCommands = new Command[7];
+        offCommands = new Command[7];
+
+        NoCommand noCommand = new NoCommand();
+        for (int i = 0; i < onCommands.length; i++) {
+            onCommands[i] = noCommand;
+            offCommands[i] = noCommand;
+        }
     }
 
     public void setCommand(int slotNumber, Command onCommand, Command offCommand){
