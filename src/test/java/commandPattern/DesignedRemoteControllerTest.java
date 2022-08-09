@@ -9,8 +9,11 @@ public class DesignedRemoteControllerTest {
         DesignedRemoteController remoteController = new DesignedRemoteController();
 
         LightOnCommand lightOnCommand = new LightOnCommand(new Light());
-
         remoteController.setCommand(lightOnCommand);
+        remoteController.pressOnButton();
+
+        CeilingFanOnCommand ceilingFanOnCommand = new CeilingFanOnCommand(new CeilingFan());
+        remoteController.setCommand(ceilingFanOnCommand);
         remoteController.pressOnButton();
 
     }
