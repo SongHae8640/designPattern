@@ -1,7 +1,5 @@
 package commandPattern;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 public class DesignedRemoteController {
@@ -9,6 +7,8 @@ public class DesignedRemoteController {
     Command[] onCommands;
     Command[] offCommands;
     Stack<Command> undoCommandStack;
+    Command onAllCommand;
+    Command offAllCommand;
 
     public DesignedRemoteController(){
         onCommands = new Command[7];
@@ -19,7 +19,9 @@ public class DesignedRemoteController {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
-        undoCommandStack = new Stack<Command>();
+        undoCommandStack = new Stack<>();
+        onAllCommand = noCommand;
+        offAllCommand = noCommand;
     }
 
     public void setCommand(int slotNumber, Command onCommand, Command offCommand){
@@ -39,6 +41,21 @@ public class DesignedRemoteController {
 
     public void pressUndoButton(){
         undoCommandStack.pop().undo();
+    }
+
+    public void setAllCommand(Command onAllCommand, Command offAllCommand){
+        this.onAllCommand = onAllCommand;
+        this.offAllCommand = offAllCommand;
+    }
+
+    public void pressOnMacroButton(){
+        this.onAllCommand.execute();
+        undoCommandStack.push(this.onAllCommand);
+    }
+
+    public void pressOffMacroButton(){
+        this.offAllCommand.execute();
+        undoCommandStack.push(this.offAllCommand);
     }
 
     @Override
