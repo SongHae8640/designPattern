@@ -12,4 +12,9 @@ public class TvOnCommand implements Command {
     public void execute() {
         tv.onPower();
     }
+
+    @Override
+    public void undo() {
+        tv.offPower();
+    }
 }

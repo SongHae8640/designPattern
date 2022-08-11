@@ -12,4 +12,9 @@ public class BathLightOffCommand implements Command {
     public void execute() {
         bathRoomLight.off();
     }
+
+    @Override
+    public void undo() {
+        bathRoomLight.on();
+    }
 }

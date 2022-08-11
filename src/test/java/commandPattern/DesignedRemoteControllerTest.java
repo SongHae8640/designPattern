@@ -8,6 +8,9 @@ public class DesignedRemoteControllerTest {
     public void commandTest(){
         DesignedRemoteController remoteController = getDesignedRemoteController();
 
+        remoteController.pressOnButton(0);
+        remoteController.pressOffButton(0);
+
         remoteController.pressOnButton(1);
         remoteController.pressOffButton(1);
 
@@ -24,6 +27,25 @@ public class DesignedRemoteControllerTest {
 
     }
 
+    @Test
+    public void undoTest(){
+
+        DesignedRemoteController remoteController = getDesignedRemoteController();
+
+        remoteController.pressOnButton(1);
+        remoteController.pressOffButton(2);
+        remoteController.pressOffButton(3);
+        remoteController.pressOffButton(4);
+
+        System.out.println("---------------");
+
+        remoteController.pressUndoButton();
+        remoteController.pressUndoButton();
+        remoteController.pressUndoButton();
+
+
+    }
+
     private DesignedRemoteController getDesignedRemoteController() {
         DesignedRemoteController remoteController = new DesignedRemoteController();
 
@@ -31,8 +53,7 @@ public class DesignedRemoteControllerTest {
         LightOnCommand lightOnCommand = new LightOnCommand(light);
         LightOffCommand lightOffCommand = new LightOffCommand(light);
         remoteController.setCommand(0,lightOnCommand, lightOffCommand);
-        remoteController.pressOnButton(0);
-        remoteController.pressOffButton(0);
+
 
         CeilingFan ceilingFan = new CeilingFan();
         CeilingFanOnCommand ceilingFanOnCommand = new CeilingFanOnCommand(ceilingFan);

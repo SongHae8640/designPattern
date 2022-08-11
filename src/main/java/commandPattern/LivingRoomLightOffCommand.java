@@ -12,4 +12,9 @@ public class LivingRoomLightOffCommand implements Command {
     public void execute() {
         livingRoomLight.off();
     }
+
+    @Override
+    public void undo() {
+        livingRoomLight.on();
+    }
 }
