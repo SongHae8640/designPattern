@@ -1,8 +1,13 @@
 package decoratorPattern;
 
 public class Espresso extends Coffee {
+
+    public Espresso(){
+        this.name = "Espresso";
+    }
+
     @Override
-    public double cost() {
-        return 1;
+    public int cost() {
+        return 4100;
     }
 }

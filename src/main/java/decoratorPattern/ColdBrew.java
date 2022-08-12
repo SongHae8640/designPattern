@@ -1,8 +1,13 @@
 package decoratorPattern;
 
 public class ColdBrew extends Coffee {
+
+    public ColdBrew(){
+        this.name = "ColdBrew";
+    }
+
     @Override
-    public double cost() {
-        return 1.5;
+    public int cost() {
+        return 5700;
     }
 }

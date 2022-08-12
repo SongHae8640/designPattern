@@ -7,5 +7,5 @@ public abstract class Coffee {
         return name;
     }
 
-    public abstract double cost();
+    public abstract int cost();
 }
