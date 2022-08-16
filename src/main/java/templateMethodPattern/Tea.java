@@ -1,6 +1,6 @@
 package templateMethodPattern;
 
-public class Tea {
+public class Tea extends Beverage{
 
     public void prepareRecipe(){
         boilWater();
@@ -9,17 +9,8 @@ public class Tea {
         addLemon();
     }
 
-
-    public void boilWater(){
-        System.out.println("물 끓이기");
-    }
-
     public void steepTeaBag(){
         System.out.println("티백 담그기");
-    }
-
-    public void pourInCup(){
-        System.out.println("컵에 담기");
     }
 
     public void addLemon(){
