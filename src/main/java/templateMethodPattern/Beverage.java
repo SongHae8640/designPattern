@@ -15,10 +15,13 @@ public abstract class Beverage {
         brew();
         pourInCup();
         addCondiments();
+        pack();
     }
 
     abstract void brew();
 
     abstract void addCondiments();
+
+    void pack() {}
 
 }

@@ -11,4 +11,9 @@ public class Coffee extends Beverage{
     void addCondiments() {
         System.out.println("설탕과 우유 첨가");
     }
+
+    @Override
+    void pack(){
+        System.out.println("커피 테이크아웃 포장");
+    }
 }
