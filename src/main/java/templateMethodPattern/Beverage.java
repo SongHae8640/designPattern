@@ -10,6 +10,15 @@ public abstract class Beverage {
         System.out.println("컵에 담기");
     }
 
-    abstract void prepareRecipe();
+    final void prepareRecipe(){
+        boilWater();
+        brew();
+        pourInCup();
+        addCondiments();
+    }
+
+    abstract void brew();
+
+    abstract void addCondiments();
 
 }
