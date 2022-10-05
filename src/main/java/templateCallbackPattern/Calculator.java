@@ -33,24 +33,10 @@ public class Calculator {
     }
 
     public int calcSum(String path) throws RuntimeException {
-        BufferedReaderCallback callback = new BufferedReaderCallback() {
-            @Override
-            public int doWithReader(String line, int result) {
-                return result + Integer.parseInt(line);
-            }
-        };
-        return fileReadTemplate(path, callback ,0);
+        return fileReadTemplate(path, (line, result) -> result + Integer.parseInt(line),0);
     }
 
     public int calcMultiply(String path) throws RuntimeException {
-
-        BufferedReaderCallback callback = new BufferedReaderCallback() {
-            @Override
-            public int doWithReader(String line, int result) {
-                return result * Integer.parseInt(line);
-            }
-        };
-
-        return fileReadTemplate(path, callback ,1);
+        return fileReadTemplate(path, (line, result) -> result * Integer.parseInt(line) ,1);
     }
 }
